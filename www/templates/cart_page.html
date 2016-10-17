@@ -1,0 +1,51 @@
+<ion-view view-title="Your Cart" icon="ion-ios-cart" style="background: url(img/menu/vegetables.png);   ">
+    <ion-header-bar class="bar-assertive">
+        <h1 class="title">
+            <i class="icon ion-ios-cart"></i> Cart
+            <button class="button button-clear assertive icon ion-ios-close-empty" style="float: right;    margin-top: 5px;" ng-click="closePopover()"></button>
+        </h1>
+    </ion-header-bar>
+    <ion-content style=" background: rgba(0, 0, 0, 0.44);">
+
+        <div class="list card animated slideInUp" ng-if="cartdata.total_quantity">
+
+
+            <div class="item item-avatar-left item-icon-right " ng-repeat="cdata in cartdata.cart_data">
+                <img src="img/product/{{cdata.image}}" >
+                <p>{{cdata.title}}</p>
+
+                <span class="item-note" style=" color:black;   font-size: 22px;margin-top: -13px;">
+                    {{cdata.quantity * cdata.price}}
+                </span>
+
+             
+                <p>{{cdata.quantity}} X  {{cdata.price}} /  {{cdata.unit}}  </p>
+                <button class="button-clear icon ion-ios-close-empty " style="color: #000;margin-top: 16px;margin-right: -12px;" ng-click="removeCart(cdata.product_id)"></button>
+            </div>
+            <div class="item  item-icon-right " >
+                <h2 class="text-center" style="font-size: 22px;">Total</h2>
+                <span class="item-note" style=" color:black;   font-size: 22px;margin-top: -25px;">
+                    {{cartdata.total_price}}
+                </span>
+
+                
+            </div>
+            <div class="item " >
+
+                <a class="button icon-left ion-chevron-left button-assertive dark" href="#/app/shownow">Show More</a>
+
+                <a class="button icon-left ion-bag button-balanced dark" style="float: right;" ng-click="showConfirm()"> Order Now <i class="icon ion-chevron-right"></i></a>
+
+            </div>
+        </div>
+
+        <div ng-if="!cartdata">
+
+            <div class="item">
+                <h2>No Item Found</h2>
+                <br/>
+                 <a class="button icon-left ion-chevron-left button-assertive dark" href="#/app/shownow">Show More</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

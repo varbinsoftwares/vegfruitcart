@@ -1,0 +1,14 @@
+
+ 1567  keytool -genkey -v -keystore varbin.keystore -alias varbinkey -keyalg RSA -keysize 2048 -validity 10000
+
+ 1574  cordova build --release android
+ 1575  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore varbin.keystore /home/atharva/project/vegfruitv1/platforms/android/build/outputs/apk/android-release-unsigned.apk varbinkey
+ 1576  mkdir mainbuild
+ 1577  cd mainbuild/
+ 1578  ls -l
+ 1579  ../../../AndroidSdk/build-tools/22.0.1/zipalign -v 4 android-release-unsigned.apk  VegFruitCart.apk
+ 1580  cd ../..
+ 1581  cd qusans/
+ 1582  ionic serve
+ 1583  cd ..
+ 1584  cd arsim/

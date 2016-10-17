@@ -1,0 +1,11 @@
+<ion-view view-title="Show Now" icon="ion-ios-cart"> 
+    <ion-content class="dark-bg">
+        <ion-list class="animate-ripple">
+            <a href="#app/productlist/{{menu.id}}"  class="animated flipInX item item-icon-right " ng-repeat="menu in menu_items" style="color: white;background: url(img/menu/{{menu.image}});     box-shadow: rgb(0, 0, 0) 0px 10px 126px 0px inset;margin-bottom:2px;     text-shadow: 1px 1px 3px #000;background-size: cover;">
+                <h1 class="light" style="font-weight: 100">{{menu.title}}</h1>
+                <p class="light" style="  color: white;    margin-bottom: 40px; ">{{menu.description}}</p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

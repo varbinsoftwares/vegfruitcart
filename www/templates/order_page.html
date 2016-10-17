@@ -1,0 +1,15 @@
+<ion-view view-title="Your Orders" >
+    <ion-content>
+        <div class="list">
+            <div class="item item-icon-left" ng-repeat="order in orderdata">
+                <i class="icon ion-bag"></i>
+                <h2>Order No:#{{order.order_id}}</h2>
+                <p>Price:{{order.total_price}}, Quantity: {{order.total_quantity}}</p>
+                <span class="item-note" style="    margin-top: -42px;">
+                    {{order.order_date}} {{order.order_time}}
+                </span>
+                  <a href="#" class="subdued">Status: Pending</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

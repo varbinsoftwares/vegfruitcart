@@ -1,0 +1,39 @@
+<ion-view view-title="{{selectedmenu.title}}">
+    <ion-content style="background: url(img/menu/{{selectedmenu.image}});background-size: cover">
+
+
+        <div class="list ">
+
+
+            <div class=" " style="padding: 5px;" ng-repeat="prd in products">
+                <div class="item item-thumbnail-left animated rotateInDownLeft">
+                    <img src="img/product/{{prd.image}}" class="animated slideInUp" ng-click="viewproduct(prd)">
+                    <h2>{{prd.title}}</h2>
+                    <p>
+                        <strong>Price</strong> :  {{prd.price}}/{{prd.unit}}
+                    </p>
+                    <p>
+                        <!--                        <button class=" button button-positive button-small" ng-click="viewproduct(prd)">
+                                                    <i class="icon ion-arrow-expand"></i> View Full
+                                                </button>-->
+                    <div class="row" style="  padding: 1px 0px;">
+                        <div class="button-bar" >
+                            <button class="button button-small col col-30" ng-click="increment(prd)"><i class="icon ion-plus"></i></button>
+                            <span class="col col-30 text-center">{{prd.quantity}}</span>
+                            <button class="button button-small col col-30" ng-click="decrement(prd)"><i class="icon ion-minus"></i></button>
+                        </div>
+                        <div class="col-40">
+                            <button style="margin-left: 10px;" class="  button button-balanced button-small" ng-click="addCard(prd)">
+                                <i class="icon ion-ios-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </ion-content>
+</ion-view>

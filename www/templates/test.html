@@ -1,0 +1,18 @@
+try {
+        $db = getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("user_update", $update->user_update);
+        $stmt->bindParam("user_id", $update->user_id);
+        $time = time();
+        $stmt->bindParam("created", $time);
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $stmt->bindParam("ip", $ip);
+        $stmt->execute();
+        $update->id = $db->lastInsertId();
+        $db = null;
+        $update_id = $update->id;
+        getUserUpdate($update_id);
+    } catch (PDOException $e) {
+        //error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":' . $e->getMessage() . '}}';
+    }

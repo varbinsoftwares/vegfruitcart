@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+.cartTotalQauntity{
+    background-color: #FFF;
+    height: 23px;
+    width: 23px;
+    color: #000000;
+    text-align: center;
+    border-radius: 50%;
+
+    border: 1px solid #fff;
+}

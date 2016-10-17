@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+
+                <button class="button button-icon button-clear ion-ios-cart" ng-click="openPopover($event)">
+                </button>
+                <div class="text-center animated slideInLeft cartTotalQauntity">
+                    {{cartdata.total_quantity}}
+                </div>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+
+        <ion-content class="assertive-bg">
+            <ion-list >
+                <a class="item item-thumbnail-left item-text-wrap" href="#" style="background: #fff;">
+                    <img src="./img/ionic.png">
+                    <h2 style=" font-weight: 100;font-size: 28px;">Veg Fruit</h2>
+                    <p>Healthy Diet for healthy peoples</p>
+
+                </a>
+                <a class="item assertive-bg assertive-border  stable" menu-close href="#/app/shownow" >
+                    <i class="icon ion-bag"></i>  &nbsp; ShopNow
+                </a>
+
+                <a class="item assertive-bg assertive-border  stable" menu-close href="#/app/cart">
+                    <i class="icon ion-ios-cart"></i> &nbsp;  View Cart
+                </a>
+                <a class="item assertive-bg assertive-border stable" menu-close href="#/app/orders">
+                    <i class="icon ion-ios-list-outline"></i> &nbsp;   Your Orders
+                </a>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
